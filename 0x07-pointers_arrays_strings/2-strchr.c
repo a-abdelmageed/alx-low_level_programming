@@ -1,5 +1,4 @@
 #include "main.h"
-//#include <_putchar.c>
 /**
  * _strchr - locates a character in a string,
  * Return: the pointer to the first occurrence of the character c.
