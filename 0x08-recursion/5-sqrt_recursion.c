@@ -20,6 +20,11 @@ int _sqrt(int prev, int root)
 	return (_sqrt(prev + 1, root));
 }
 
+/**
+ * _sqrt_recursion - recursive square root of a number
+ * @n: the integer
+ * Return: square root
+ */
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
