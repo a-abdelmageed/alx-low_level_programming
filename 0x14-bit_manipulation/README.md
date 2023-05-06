@@ -1,1 +1,1 @@
-This is 0x14-bit_manipulation Tasks
+README.md of 0x14. C - Bit manipulation

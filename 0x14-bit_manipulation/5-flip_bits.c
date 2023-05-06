@@ -1,39 +1,47 @@
 #include "main.h"
-/*
-	Write a function that returns the number of bits you would need to flip to get from one number to another.
-*/
 
 unsigned int get_length(unsigned long int num);
-
+/**
+ * flip_bits -  returns the number of bits to be flipped in 'n' to give 'm'
+ * @n: first number provided
+ * @m: second number provided
+ * Return: number of bits to be flipped in both numbers to make them equal
+ */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int x, counter, length_1, length_2, TotalLength;
-	int bit_1, bit_2;
+	unsigned int i, count, length1, length2, total_length;
+	int bit1, bit2;
 
-	length_1 = get_length(n);
-	length_2 = get_length(m);
-	TotalLength = (length_1 > length_2) ? length_1 : length_2;
+	length1 = get_length(n);
+	length2 = get_length(m);
+	total_length = (length1 > length2) ? length1 : length2;
 
-	counter = 0;
-	for (x = 0; x < TotalLength; x++)
+	count = 0;
+	for (i = 0; i < total_length; i++)
 	{
-		bit_1 = n & 1;
-		bit_2 = m & 1;
-		if (bit_1 != bit_2)
-			counter++;
+		bit1 = n & 1;
+		bit2 = m & 1;
+		if (bit1 != bit2)
+			count++;
 		n >>= 1;
 		m >>= 1;
 	}
-	return (counter);
+	return (count);
 }
 
+/**
+ * get_length - returns the number of bits in a number
+ * @num: number to consider
+ *
+ * Return: length of number
+ */
 unsigned int get_length(unsigned long int num)
 {
-	unsigned int counter;
+	unsigned int count;
 
 	if (num == 0)
 		return (1);
-	for (counter = 0; num != 0; counter++)
+	for (count = 0; num != 0; count++)
 		num >>= 1;
-	return (counter);
+	return (count);
 }

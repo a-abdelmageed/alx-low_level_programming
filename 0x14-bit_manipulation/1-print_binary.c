@@ -1,14 +1,15 @@
 #include "main.h"
 
 /**
-	Write a function that prints the binary representation of a number.
+ * print_binary - converts the decimal format number into binary
+ * @n: decimal number
  */
 void print_binary(unsigned long int n)
 {
-	int val;
-	static int counter;
+	int temp;
+	static int count;
 
-	if (n == 0 && counter > 0)
+	if (n == 0 && count > 0)
 		return;
 	else if (n == 0)
 	{
@@ -16,8 +17,8 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
-	val = (n & 1);
-	counter++;
+	temp = (n & 1);
+	count++;
 	print_binary(n >>= 1);
-	_putchar('0' + val);
+	_putchar('0' + temp);
 }
