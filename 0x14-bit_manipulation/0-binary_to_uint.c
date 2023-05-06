@@ -5,7 +5,7 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int convertedNum = 0;
+	unsigned int convertedNum = 0;
 
 	if (b == NULL)
 		return (0);
